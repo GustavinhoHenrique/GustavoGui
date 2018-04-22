@@ -29,22 +29,22 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Chama Splash Screen
-        Intent intent = new Intent(MainActivity.this, splashActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(MainActivity.this, splashActivity.class);
+//        startActivity(intent);
 
         //Toca audio da splash screen (barulho de teclas)
-        MediaPlayer ring= MediaPlayer.create(MainActivity.this,R.raw.audioteclado);
-        ring.start();
+//        MediaPlayer ring= MediaPlayer.create(MainActivity.this,R.raw.audioteclado);
+//        ring.start();
 
 
         //Chama a listagem de filmes depois de 34 segundos (quando acabar a splashscreen
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+//        new Handler().postDelayed(new Runnable() {
+//        @Override
+//            public void run() {
                 Intent intent2 = new Intent(MainActivity.this, ViewListContents.class);
                 startActivity(intent2);
-            }
-        }, tempo);
+//            }
+//        }, tempo);
 
     }
 }

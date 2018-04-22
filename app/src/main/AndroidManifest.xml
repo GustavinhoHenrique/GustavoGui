@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".cadastrarFilmes" />
         <activity android:name=".ViewListContents" />
-        <activity android:name=".splashActivity"></activity>
+        <activity android:name=".splashActivity" />
     </application>
 
 </manifest>

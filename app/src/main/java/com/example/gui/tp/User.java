@@ -5,37 +5,58 @@ package com.example.gui.tp;
  */
 
 public class User {
-    private String FirstName;
-    private String LastName;
-    private String FavFood;
+    private String NOME;
+    private String GENERO;
+    private String DIRETOR;
+    private String ANO;
+    private String FAIXA;
 
-    public User(String fName,String lName, String fFood){
-        FirstName = fName;
-        LastName = lName;
-        FavFood = fFood;
+    public User(String fNome,String fGenero, String fDiretor, String fAno, String fFaixa){
+        NOME = fNome;
+        GENERO = fGenero;
+        DIRETOR = fDiretor;
+        ANO = fAno;
+        FAIXA = fFaixa;
     }
 
-    public String getFirstName() {
-        return FirstName;
+    public String getNOME() {
+        return NOME;
     }
 
-    public void setFirstName(String firstName) {
-        FirstName = firstName;
+    public void setNOME(String Nome) {
+        NOME = Nome;
     }
 
-    public String getLastName() {
-        return LastName;
+    public String getGENERO() {
+        return GENERO;
     }
 
-    public void setLastName(String lastName) {
-        LastName = lastName;
+    public void setGENERO (String Genero) {
+        GENERO = Genero;
     }
 
-    public String getFavFood() {
-        return FavFood;
+    public String getDIRETOR() {
+        return DIRETOR;
     }
 
-    public void setFavFood(String favFood) {
-        FavFood = favFood;
+    public void setDIRETOR(String Diretor) {
+        DIRETOR = Diretor;
     }
+
+    public String getANO() {
+        return ANO;
+    }
+
+    public void setANO(String Ano) {
+        ANO = Ano;
+    }
+
+    public String getFAIXA() {
+        return FAIXA;
+    }
+
+    public void setFAIXA(String Faixa) {
+        FAIXA = Faixa;
+    }
+
 }

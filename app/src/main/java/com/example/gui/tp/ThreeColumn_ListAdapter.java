@@ -14,9 +14,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by Mitch on 2016-05-06.
- */
 public class ThreeColumn_ListAdapter extends ArrayAdapter<User> {
 
     private LayoutInflater mInflater;
@@ -36,17 +33,25 @@ public class ThreeColumn_ListAdapter extends ArrayAdapter<User> {
         User user = users.get(position);
 
         if (user != null) {
-            TextView firstName = (TextView) convertView.findViewById(R.id.textFirstName);
-            TextView lastName = (TextView) convertView.findViewById(R.id.textLastName);
-            TextView favFood = (TextView) convertView.findViewById(R.id.textFavFood);
-            if (firstName != null) {
-                firstName.setText(user.getFirstName());
+            TextView Nome = (TextView) convertView.findViewById(R.id.textNome);
+            TextView Genero = (TextView) convertView.findViewById(R.id.textGenero);
+            TextView Diretor = (TextView) convertView.findViewById(R.id.textDiretor);
+            TextView Ano = (TextView) convertView.findViewById(R.id.textAno);
+            TextView Faixa = (TextView) convertView.findViewById(R.id.textFaixa);
+            if (Nome != null) {
+                Nome.setText(user.getNOME());
             }
-            if (lastName != null) {
-                lastName.setText((user.getLastName()));
+            if (Genero != null) {
+                Genero.setText((user.getGENERO()));
             }
-            if (favFood != null) {
-                favFood.setText((user.getFavFood()));
+            if (Diretor != null) {
+                Diretor.setText((user.getDIRETOR()));
+            }
+            if (Ano != null) {
+                Ano.setText((user.getANO()));
+            }
+            if (Faixa != null) {
+                Faixa.setText((user.getFAIXA()));
             }
         }
 

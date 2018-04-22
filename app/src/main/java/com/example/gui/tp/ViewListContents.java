@@ -45,14 +45,14 @@ public class ViewListContents extends AppCompatActivity {
         Cursor data = myDB.getListContents();
         int numRows = data.getCount();
         if(numRows == 0){
-            Toast.makeText(ViewListContents.this,"The Database is empty  :(.",Toast.LENGTH_LONG).show();
+            Toast.makeText(ViewListContents.this,"Lista vazia!",Toast.LENGTH_LONG).show();
         }else{
             int i=0;
             while(data.moveToNext()){
-                user = new User(data.getString(1),data.getString(2),data.getString(3));
+                user = new User(data.getString(1),data.getString(2),data.getString(3),data.getString(4),data.getString(5));
                 userList.add(i,user);
-                System.out.println(data.getString(1)+" "+data.getString(2)+" "+data.getString(3));
-                System.out.println(userList.get(i).getFirstName());
+                System.out.println(data.getString(1)+" "+data.getString(2)+" "+data.getString(3)+" "+data.getString(4)+" "+data.getString(5));
+                System.out.println(userList.get(i).getNOME());
                 i++;
             }
             ThreeColumn_ListAdapter adapter =  new ThreeColumn_ListAdapter(this,R.layout.list_adapter_view, userList);

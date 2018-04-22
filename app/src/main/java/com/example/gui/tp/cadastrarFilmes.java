@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class cadastrarFilmes extends AppCompatActivity {
 
-    EditText etFirstName,etLastName,etFavFood;
+    EditText etNome, etGenero, etDiretor, etAno, etFaixa;
     Button btnAdd;
     DatabaseHelper myDB;
 
@@ -19,9 +19,11 @@ public class cadastrarFilmes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrarfilmes);
-        etFavFood = (EditText) findViewById(R.id.etFavFood);
-        etFirstName = (EditText) findViewById(R.id.etFirstName);
-        etLastName = (EditText) findViewById(R.id.etLastName);
+        etDiretor = (EditText) findViewById(R.id.etDiretor);
+        etAno = (EditText) findViewById(R.id.etAno);
+        etFaixa = (EditText) findViewById(R.id.etFaixa);
+        etNome = (EditText) findViewById(R.id.etNome);
+        etGenero = (EditText) findViewById(R.id.etGenero);
         btnAdd = (Button) findViewById(R.id.btnAdd);
         myDB = new DatabaseHelper(this);
 
@@ -29,14 +31,18 @@ public class cadastrarFilmes extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String fName = etFirstName.getText().toString();
-                String lName = etLastName.getText().toString();
-                String fFood = etFavFood.getText().toString();
-                if(fName.length() != 0 && lName.length() != 0 && fFood.length() != 0){
-                    AddData(fName,lName, fFood);
-                    etFavFood.setText("");
-                    etLastName.setText("");
-                    etFirstName.setText("");
+                String fNome = etNome.getText().toString();
+                String fGenero = etGenero.getText().toString();
+                String fFaixa = etFaixa.getText().toString();
+                String fDiretor = etDiretor.getText().toString();
+                String fAno = etAno.getText().toString();
+                if(fNome.length() != 0 && fGenero.length() != 0 && fDiretor.length() != 0 && fAno.length() != 0 && fFaixa.length() != 0){
+                    AddData(fNome,fGenero, fDiretor, fAno, fFaixa);
+                    etDiretor.setText("");
+                    etAno.setText("");
+                    etFaixa.setText("");
+                    etGenero.setText("");
+                    etNome.setText("");
 
                     //Chama a acitivity de listar filmes
                     Intent intent = new Intent(cadastrarFilmes.this,ViewListContents.class);
@@ -50,8 +56,8 @@ public class cadastrarFilmes extends AppCompatActivity {
 
     }
 
-    public void AddData(String firstName,String lastName, String favFood ){
-        boolean insertData = myDB.addData(firstName,lastName,favFood);
+    public void AddData(String Nome,String Genero, String Diretor, String Ano, String Faixa){
+        boolean insertData = myDB.addData(Nome,Genero,Diretor, Ano, Faixa);
 
         if(insertData==true){
             Toast.makeText(cadastrarFilmes.this,"Successfully Entered Data!",Toast.LENGTH_LONG).show();
