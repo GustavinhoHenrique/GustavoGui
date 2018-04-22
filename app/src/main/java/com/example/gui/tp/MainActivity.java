@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private static int tempo = 34230; //Em milissegundos - 34,23 segundos
@@ -28,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
         //Chama Splash Screen
         Intent intent = new Intent(MainActivity.this, splashActivity.class);
         startActivity(intent);
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent2 = new Intent(MainActivity.this, listar.class);
+                Intent intent2 = new Intent(MainActivity.this, ViewListContents.class);
                 startActivity(intent2);
             }
         }, tempo);

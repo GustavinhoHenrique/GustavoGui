@@ -16,13 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".splashActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".excluir" />
-        <activity android:name=".listar" />
-        <activity android:name=".cadastro"></activity>
+        <activity android:name=".cadastrarFilmes" />
+        <activity android:name=".ViewListContents" />
+        <activity android:name=".splashActivity"></activity>
     </application>
 
 </manifest>
